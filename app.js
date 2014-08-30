@@ -9,20 +9,6 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-var mongo = require('mongodb');
-
-var Server = mongo.Server,
-    Db = mongo.Db,
-    BSON = mongo.BSONPure;
-
-var server = new Server('localhost', 27017, {auto_reconnect: true}),
-    db = new Db('cogdb', server);
-
-db.open(function(err, db) {
-  if (!err) {
-    console.log("Connected to cogdb.");
-  }
-});
 
 console.log("Started!");
 // view engine setup
